@@ -1,26 +1,27 @@
-.container{
-  width:100%;
-  height:25%;
-  font-size:50px;
-  border: 1px solid grey;
-  margin:20% 0 0 0;
-
-}
 html{
-  color:red;
-  justify-content: center;
+  background-color: #C5CDD9;
+  font-size: 40px;
 }
-.container form{
-  margin:3% 40% 0 40%;
-  width:20%;
-
+form{
+  border: 3px solid grey;
+  width:80%;
+  height: 50%;
+  margin:10% 10% 0 10%;
+  background-color:#CAC5D9;
 }
-form ::placeholder{
-  font-size: 15px;
+.log-in{
 }
-form button{
-  font-size: 25px;
-  padding:2%;
-  margin:5% 35% 0 35%;
-  width:30%;
+.log-in input{
+  font-size: 120%;
+  width: 40%;
+  height: 15%;
+  margin: 5% 30% 0 30%;
+  background-color: #D9D4C5;
+}
+.log-in button{
+  width:25%;
+  margin: 5% 37.5% 0 37.5%;
+  height: 10%;
+  font-size: 80%;
+  background-color:#C5D1D9;
 }

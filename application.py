@@ -23,3 +23,7 @@ def find_book():
     book = request.form.get('book_name')
     books.append(book)
     return render_template('finded-books.html', books=books)
+
+@app.route('/finded-books/<string:book>')
+def book(book):
+    return book
