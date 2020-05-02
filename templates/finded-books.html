@@ -1,0 +1,9 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+  <ol>
+    {% for book in  books  %}
+    <li>{{book}}</li>
+    {% endfor %}
+  </ol>
+{% endblock %}

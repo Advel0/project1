@@ -1,0 +1,26 @@
+.container{
+  width:100%;
+  height:25%;
+  font-size:50px;
+  border: 1px solid grey;
+  margin:20% 0 0 0;
+
+}
+html{
+  color:red;
+  justify-content: center;
+}
+.container form{
+  margin:3% 40% 0 40%;
+  width:20%;
+
+}
+form ::placeholder{
+  font-size: 15px;
+}
+form button{
+  font-size: 25px;
+  padding:2%;
+  margin:5% 35% 0 35%;
+  width:30%;
+}

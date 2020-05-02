@@ -1,0 +1,15 @@
+{% extends 'layout.html'%}
+{% block style %}
+    <link rel='stylesheet', href="{{ url_for('static', filename='css/log-in.css') }}">
+{% endblock %}
+{% block content %}
+  <div class='container'>
+    <form action="{{ url_for('search')}}" method='post'>
+      <input placeholder='Username' name='username' type='text'>
+      <input placeholder='Password' name='password' type='password'>
+    <div>
+      <button>Sign in</button>
+    </div>
+    </form>
+  </div>
+{% endblock %}
