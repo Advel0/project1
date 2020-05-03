@@ -7,7 +7,7 @@
     <h1>List of Finded Books:</h1>
     <ol>
       {% for book in  books  %}
-      <li><a href="{{ url_for('book', book=book)}}">{{book}}</a></li>
+      <li><a href="{{ url_for('book', isbn=book.isbn)}}">{{book.title}}</a></li>
       {% endfor %}
     </ol>
   </div>
