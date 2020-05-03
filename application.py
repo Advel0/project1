@@ -1,4 +1,7 @@
+import os
+
 from flask import Flask, render_template, request
+
 
 app = Flask(__name__)
 
@@ -27,3 +30,11 @@ def find_book():
 @app.route('/finded-books/<string:book>')
 def book(book):
     return book
+
+@app.route('/create-account')
+def create_account():
+    return render_template('create_account.html')
+
+@app.route('/create-account/smth')
+def apply_created_account():
+    return render_template('creating_account_result.html')
