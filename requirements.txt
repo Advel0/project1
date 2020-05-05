@@ -2,3 +2,10 @@ Flask
 Flask-Session
 psycopg2-binary
 SQLAlchemy
+SELECT
+	to_char(
+		AVG (mark),
+		'99999999999999999D99'
+	) AS average_amount
+FROM
+	marks;
