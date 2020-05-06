@@ -12,18 +12,9 @@
         <li>Isbn: {{book.isbn}}</li>
       </ul>
       <div class='mark'>
-        <p>Give this book a mark</p>
-        <p>An average mark:<span>{{average_mark}}</span></p>
-        <form action="{{url_for('set_mark', id=id, book_id=book.id)}}" method='post'>
-          <select name='mark'>
-            <option value=1>1</option>
-            <option value=2>2</option>
-            <option value=3>3</option>
-            <option value=4>4</option>
-            <option value=5>5</option>
-          </select>
-          <button>Sent a mark</button>
-        </form>
+        <p>An average mark:<span>{{info['books'][0]['average_rating']}}</span></p>
+        <p>Amount of marks:    <span>{{info['books'][0]['ratings_count']}}</span></p>
+
       </div>
     </div>
     <div class='comments'>
@@ -31,10 +22,21 @@
       <h4>Place your comment</h4>
       <form action="{{ url_for('create_comment', book_id=book.id, id=id)}}" method='post'>
         <input placeholder="Enter your message" name='cont' type='text'>
+        <p>
+          Give a mark to a book
+          <select name='mark'>
+             <option value=1>1</option>
+             <option value=2>2</option>
+             <option value=3>3</option>
+             <option value=4>4</option>
+             <option value=5>5</option>
+           </select>
+        </p>
         <p><button>Send</button></p>
       </form>
       {% for comment in reviews %}
         <div class='single_com'>
+          <span>Mark : {{comment.mark}}</span>
           <p>{{comment.username}}</p>
           <div>{{comment.text}}</div>
         </div>

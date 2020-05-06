@@ -67,3 +67,8 @@ html{
 .mark span{
   color:green;
 }
+.single_com span{
+  color: pink;
+  text-shadow: 1px 1px 1px black;
+  text-align: center;
+}
