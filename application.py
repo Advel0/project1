@@ -50,7 +50,7 @@ def find_book(id):
 def book(book_id, id):
     average_mark = db.execute("SELECT AVG(mark) FROM marks WHERE book_id=:book_id;", {"book_id": book_id}).fetchone()
     book = db.execute("SELECT * FROM books WHERE id=:id;", {'id':book_id}).fetchone()
-    reviews = db.execute("SELECT mark,username,text FROM reviews JOIN marks ON reviews.user_id=marks.user_id JOIN users ON reviews.user_id=users.id WHERE reviews.book_id=:book_id;", {'book_id':book_id})
+    reviews = db.execute("SELECT mark,username,text FROM reviews JOIN marks ON reviews.book_id=marks.book_id JOIN users ON reviews.user_id=users.id WHERE reviews.book_id=:book_id;", {'book_id':book_id})
     if average_mark.avg:
         average_mark = round(average_mark.avg,2)
     else:
@@ -93,15 +93,17 @@ def set_mark(id, book_id):
 @app.route('/api/<string:isbn>')
 def get_info(isbn):
     book = db.execute('SELECT * FROM books WHERE isbn=:isbn', {'isbn':isbn}).fetchone()
-    book_info = jsonify(
-                {
-                'isbn':book.isbn,
-                'title':book.title,
-                'author':book.author,
-                'year':book.year,
-                }
-    )
-    return book_info
+    if book:
+        book_info = jsonify(
+                    {
+                    'isbn':book.isbn,
+                    'title':book.title,
+                    'author':book.author,
+                    'year':book.year,
+                    }
+        )
+        return book_info
+    return '404'
 
 @app.route('/quit')
 def quit_account():
